@@ -307,6 +307,7 @@ void DetourManager::ProcessEventDetour(const UObject* Class, const UFunction* Fu
         
         // Player Tweaks
         PlayerTweaksDetours::Func_DoCharacterTweaks();
+        HousingDetours::Func_DoTiltPlacements();
         MovementDetours::Func_DoNoClip();
         MovementDetours::Func_DoPersistentMovement();
         FishingDetours::Func_DoFastAutoFishing();

@@ -21,6 +21,21 @@ void HousingDetours::Func_DoPlaceAnywhere() {
     PlacementComponent->CanPlaceHere = true;
 }
 
+void HousingDetours::Func_DoTiltPlacements() {
+    if (!bTiltPlacements)
+        return;
+
+    const auto ValeriaCharacter = GetValeriaCharacter();
+    if (!ValeriaCharacter)
+        return;
+
+        UPlacementComponent* PlacementComponent = ValeriaCharacter->GetPlacement();
+    if (!PlacementComponent || !PlacementComponent->IsValidLowLevel() || PlacementComponent->IsDefaultObject())
+        return;
+
+    std::cout << "Currently Placing Item" << std::endl;
+}
+
 void HousingDetours::IsBiomeUnlockedDetour() {
     if (!orig_IsBiomeUnlocked) {
         auto biomeconfig = UHousingBiomeConfigAsset::StaticClass();
@@ -40,3 +55,5 @@ void HousingDetours::Func_IsBiomeUnlocked(void* Context, void* TheStack, void* R
     }
 #endif
 }
+
+inline bool HousingDetours::bTiltPlacements = false;

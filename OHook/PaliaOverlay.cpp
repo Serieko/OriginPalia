@@ -23,6 +23,7 @@
 #include "Detours/MovementDetours.h"
 #include "Detours/TeleportDetours.h"
 #include "Detours/WidgetDetours.h"
+#include "Detours/HousingDetours.h"
 
 using namespace SDK;
 
@@ -104,11 +105,11 @@ void DrawEnabledFeatures() {
 #ifdef ENABLE_SUPPORTER_FEATURES
             DisplayModsCategory("Housing Mods", {
                 {"Place Items Anywhere", Configuration::bPlaceAnywhere},
-                {"Unlock Landscapes", Configuration::bEnableFreeLandscape}
+                {"Unlock Landscapes", Configuration::bEnableFreeLandscape},
                 });
 #else
             DisplayModsCategory("Housing Mods", {
-                {"Place Items Anywhere", Configuration::bPlaceAnywhere}
+                {"Place Items Anywhere", Configuration::bPlaceAnywhere},
             });
 #endif
         }
@@ -2442,6 +2443,7 @@ void PaliaOverlay::DrawOverlay() {
                     UPlacementComponent* PlacementComponent = ValeriaCharacter->GetPlacement();
                     if (PlacementComponent) {
                         IMGUI_CHECKBOX("Place Items Anywhere", &Configuration::bPlaceAnywhere, "Allow for placement of housing items anywhere.")
+                        IMGUI_CHECKBOX("Tilt Items", &HousingDetours::bTiltPlacements, "Allow for tilting of items.")
                         ImGui::Spacing();
                     } else {
                         ImGui::Text("No Placement Component available.");
@@ -2529,6 +2531,8 @@ void PaliaOverlay::DrawOverlay() {
     }
 
     ImGui::End();
+
+    bool bTiltPlacements = false;
 
     if (!show)
         Menu::bShowMenu = false;
