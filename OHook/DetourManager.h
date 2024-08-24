@@ -31,6 +31,9 @@ static UFunction* FishingComponent_RpcClient_StartFishingAt_Deprecated = nullptr
 static UFunction* FishingComponent_RpcServer_EndFishing = nullptr;
 static UFunction* FishingComponent_RpcClient_FishCaught = nullptr;
 
+static UFunction* PlacementComponent_RpcServer_UpdateLockedItemToPlace = nullptr;
+static UFunction* PlacementComponent_RpcServer_PlaceItem = nullptr;
+
 static UFunction* TrackingComponent_RpcServer_SetUserMarker = nullptr;
 static UFunction* TrackingComponent_RpcClient_SetUserMarkerViaWorldMap = nullptr;
 

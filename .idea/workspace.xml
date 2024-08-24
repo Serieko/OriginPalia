@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a294b151-9154-45f9-81bb-dbb2b467a044" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/OHook/Configuration.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OHook/Configuration.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OHook/Configuration.h" beforeDir="false" afterPath="$PROJECT_DIR$/OHook/Configuration.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OHook/DetourManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OHook/DetourManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OHook/DetourManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/OHook/DetourManager.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OHook/Detours/HousingDetours.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OHook/Detours/HousingDetours.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OHook/Detours/HousingDetours.h" beforeDir="false" afterPath="$PROJECT_DIR$/OHook/Detours/HousingDetours.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OHook/PaliaOverlay.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OHook/PaliaOverlay.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PaliaSDK/Dumper7_V3.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PaliaSDK/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OHook/dllmain.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OHook/dllmain.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversalHookX/console/console.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/UniversalHookX/console/console.hpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +21,15 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/ImGui/imgui_internal.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/OHook/DetourManager.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/OHook/DetourManager.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/OHook/Detours/HousingDetours.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/OHook/Detours/HousingDetours.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PaliaSDK/SDK/Palia_classes.hpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PaliaSDK/SDK/WBP_ActionMenu_CM_parameters.hpp" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -33,7 +42,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/infinite-building&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/building-features&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -54,6 +63,8 @@
       <workItem from="1724372431276" duration="617000" />
       <workItem from="1724406767457" duration="210000" />
       <workItem from="1724407031803" duration="294000" />
+      <workItem from="1724441174512" duration="77000" />
+      <workItem from="1724441312370" duration="2248000" />
     </task>
     <servers />
   </component>

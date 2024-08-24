@@ -46,6 +46,10 @@ void DetourManager::InitFunctions() {
     FUNCTION_DETOUR(PlayerController_ClientRestart, "Function Engine.PlayerController.ClientRestart")
     FUNCTION_DETOUR(HUD_ReceiveDrawHUD, "Function Engine.HUD.ReceiveDrawHUD")
 
+    // Placement component
+    FUNCTION_DETOUR(PlacementComponent_RpcServer_UpdateLockedItemToPlace, "Function Palia.PlacementComponent.RpcServer_UpdateLockedItemToPlace")
+    FUNCTION_DETOUR(PlacementComponent_RpcServer_PlaceItem, "Function Palia.PlacementComponent.RpcServer_PlaceItem")
+
     // Fishing component
     FUNCTION_DETOUR(FishingComponent_RpcServer_SelectLoot, "Function Palia.FishingComponent.RpcServer_SelectLoot")
     FUNCTION_DETOUR(FishingComponent_RpcClient_StartFishingAt_Deprecated, "Function Palia.FishingComponent.RpcClient_StartFishingAt_Deprecated")
@@ -307,7 +311,7 @@ void DetourManager::ProcessEventDetour(const UObject* Class, const UFunction* Fu
         
         // Player Tweaks
         PlayerTweaksDetours::Func_DoCharacterTweaks();
-        HousingDetours::Func_DoTiltPlacements();
+        HousingDetours::Func_UpdatePlacementControls(Params);
         MovementDetours::Func_DoNoClip();
         MovementDetours::Func_DoPersistentMovement();
         FishingDetours::Func_DoFastAutoFishing();
@@ -379,17 +383,29 @@ void DetourManager::ProcessEventDetour(const UObject* Class, const UFunction* Fu
     else if (Function == TrackingComponent_RpcClient_SetUserMarkerViaWorldMap) {
         TeleportDetours::Func_DoTeleportToWaypoint(Params);
     }
-    
+
     // Silent Aim
     else if (Function == ProjectileFiringComponent_RpcServer_FireProjectile) {
         AimDetours::Func_DoSilentAim(Params);
     }
     // Movement Bypass
     else if (Function == ValeriaClientPriMovementComponent_RpcServer_SendMovement) {
+        //TODO NEED THIS
         auto sendMovement = static_cast<Params::ValeriaClientPriMovementComponent_RpcServer_SendMovement*>(Params);
         sendMovement->MoveInfo.TargetVelocity.X = 0;
         sendMovement->MoveInfo.TargetVelocity.Y = 0;
     }
+    // Tilt
+    else if (Function == PlacementComponent_RpcServer_UpdateLockedItemToPlace) {
+        HousingDetours::Func_UpdateLockedItemToPlace(Params);
+    }
+
+    else if (Function == PlacementComponent_RpcServer_PlaceItem)
+    {
+        HousingDetours::Func_PlaceItem(Params);
+    }
+
+    
 
 	// Outfits, Confirm Button Handle(For v3 outfits ~Manual whitelisting of Entitlements)
 //#ifdef ENABLE_SUPPORTER_FEATURES // Future-proofing

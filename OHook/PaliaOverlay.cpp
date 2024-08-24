@@ -2443,6 +2443,7 @@ void PaliaOverlay::DrawOverlay() {
                     UPlacementComponent* PlacementComponent = ValeriaCharacter->GetPlacement();
                     if (PlacementComponent) {
                         IMGUI_CHECKBOX("Place Items Anywhere", &Configuration::bPlaceAnywhere, "Allow for placement of housing items anywhere.")
+                        ImGui::Spacing();
                         IMGUI_CHECKBOX("Tilt Items", &HousingDetours::bTiltPlacements, "Allow for tilting of items.")
                         ImGui::Spacing();
                     } else {

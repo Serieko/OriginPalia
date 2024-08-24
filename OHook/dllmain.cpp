@@ -36,7 +36,7 @@ BOOL WINAPI DllMain(const HMODULE hModule, const DWORD fdwReason, const LPVOID l
 DWORD WINAPI OnProcessAttach(const LPVOID lpParam) {
 	HMODULE hModule = static_cast<HMODULE>(lpParam);
 
-	int32_t GMallocOffset = 0x089603A0;
+	int32_t GMallocOffset = 0x0898E0A0;
 
 	// Steam Support
 	char fileName[MAX_PATH];
