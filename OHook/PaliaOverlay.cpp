@@ -640,6 +640,10 @@ void PaliaOverlay::DrawOverlay() {
                 OpenTab = 5;
                 ImGui::EndTabItem();
             }
+            if (ImGui::BeginTabItem(ICON_FA_USER " Friends")) {
+                OpenTab = 6;
+                ImGui::EndTabItem();
+            }
             ImGui::EndTabBar();
         }
 
@@ -2519,13 +2523,27 @@ void PaliaOverlay::DrawOverlay() {
                         ImGui::EndPopup();
                     }
 #endif
+
+                    
                 } else {
                     ImGui::Text("Waiting for character initialization...");
                 }
             }
 		    
-            
         }
+        // ==================================== 6 Friends TAB
+		else if (OpenTab == 6)
+		{
+		    if (ImGui::CollapsingHeader("Friends List##FriendsListHeader", ImGuiTreeNodeFlags_DefaultOpen))
+		    {
+		        if (ValeriaCharacter) {
+                    ImGui::Text("Test");
+		        } else
+		        {
+		            ImGui::Text("Waiting for character initialization...");
+		        }
+		    }
+		}
     }
 
     ImGui::End();
